@@ -1,4 +1,4 @@
-package TestLearn;
+package Test;
 /**
  * Copyright (c) 2018/7/17. XiaoMi Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
