@@ -32,6 +32,7 @@ public class AssertDemo {
         Person p = new Person();
         //斷言
 		Assert.assertEquals("1",p.a());//通过测试，期望返回1，结果也返回了1
+        //Assert.assertNotSame("oh no""1",p.a());//担心返回1，结果返回了1
         Assert.assertArrayEquals(new int[]{1,1}, new int[]{1,1});//測試通過
 //		Assert.assertArrayEquals(new int[]{1,1}, new int[]{1,2});//測試失敗
 
