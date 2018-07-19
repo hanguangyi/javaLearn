@@ -37,6 +37,11 @@ public class TypeLearn {
         String s = strOb.getOb();
         System.out.println("value = "+s);
         //使用泛型end
+
+        Test<String> temp = new Test<String>(null);
+        temp.setOb("hello this is hgy.and XXXXXXXXXXXXXXXXXXXXX is this no limit length?");
+        temp.showType();
+        System.out.println("value "+temp.getOb());
     }
 }
 
