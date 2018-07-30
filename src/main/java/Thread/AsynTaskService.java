@@ -16,6 +16,7 @@ package Thread;
  * @Date: 2018/7/27 下午2:31
  */
 
+import ScheduleTimer.TimerDoSth;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
@@ -49,4 +50,9 @@ public class AsynTaskService {
             e.printStackTrace();
         }
     }
+    /*@Async
+    public  void f3(){
+        TimerDoSth doSth = new TimerDoSth();
+        doSth.printSth("hanguangyi print");
+    }*/
 }

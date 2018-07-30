@@ -1,6 +1,5 @@
-package Thread;
 /**
- * Copyright (c) 2018/7/27. XiaoMi Inc.
+ * Copyright (c) 2018/7/30. XiaoMi Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,11 +12,14 @@ package Thread;
  *
  * @Author: Han Guangyi
  * @Mail: hanguangyi@xiaomi.com
- * @Date: 2018/7/27 下午2:38
+ * @Date: 2018/7/30 上午11:09
  */
 
-import ScheduleTimer.TimerDoSth;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.scheduling.annotation.EnableScheduling;
+
+import javax.swing.*;
 
 /**
  *@Brief: 简要说明.
@@ -26,15 +28,13 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  *
  *@Note:
  */
-public class TestThread {
-    public static void main(String[] args){
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ThreadConfig.class);
-        AsynTaskService service = context.getBean(AsynTaskService.class);
-        for(int i= 0; i<10;i++){//执行异步任务
 
-            service.f2();
-            service.f1();
-        }
-        context.close();
+@EnableScheduling
+@ComponentScan(basePackages = "ScheduleTimer")
+@SpringBootApplication
+public class SpringApplication {
+    public static void main(String[] args)
+    {
+        org.springframework.boot.SpringApplication.run(SpringApplication.class, args);
     }
 }

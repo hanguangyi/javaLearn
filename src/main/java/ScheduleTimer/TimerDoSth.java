@@ -1,4 +1,4 @@
-package Thread;
+package ScheduleTimer;
 /**
  * Copyright (c) 2018/7/27. XiaoMi Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,11 +13,13 @@ package Thread;
  *
  * @Author: Han Guangyi
  * @Mail: hanguangyi@xiaomi.com
- * @Date: 2018/7/27 下午2:38
+ * @Date: 2018/7/27 下午4:40
  */
 
-import ScheduleTimer.TimerDoSth;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 
 /**
  *@Brief: 简要说明.
@@ -26,15 +28,15 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  *
  *@Note:
  */
-public class TestThread {
-    public static void main(String[] args){
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ThreadConfig.class);
-        AsynTaskService service = context.getBean(AsynTaskService.class);
-        for(int i= 0; i<10;i++){//执行异步任务
 
-            service.f2();
-            service.f1();
-        }
-        context.close();
+@Service
+public class TimerDoSth {
+    /**
+     * 定时任务，每隔10s打印一句话
+     */
+    @Scheduled(cron = "0/1 * * * * ?")
+    public void printSth(){
+        System.out.println("here print ******hgy");
     }
+
 }
