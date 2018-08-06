@@ -1,4 +1,4 @@
-package InterfaceInjection;
+package com.hgy.javacode.InterfaceInjection;
 /**
  * Copyright (c) 2018/7/23. XiaoMi Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +13,12 @@ package InterfaceInjection;
  *
  * @Author: Han Guangyi
  * @Mail: hanguangyi@xiaomi.com
- * @Date: 2018/7/23 下午3:41
+ * @Date: 2018/7/23 下午3:43
  */
+
+import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  *@Brief: 简要说明.
@@ -23,7 +27,22 @@ package InterfaceInjection;
  *
  *@Note:
  */
-public interface PersonTool {
-    int getNewAge();
-    String getNewName(String name);
+@Data
+@Component
+public class Person implements PersonTool{
+    private int age;
+    private String name;
+    @Autowired
+    private MerryApi merryTool;
+
+    @Override
+    public int getNewAge() {
+        return 1;
+    }
+
+    @Override
+    public String getNewName(String name) {
+        String merryName = merryTool.merrySb("levey");
+        return name+merryName;
+    }
 }

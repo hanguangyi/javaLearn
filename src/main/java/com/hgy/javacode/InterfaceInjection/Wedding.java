@@ -1,6 +1,6 @@
-package Test;
+package com.hgy.javacode.InterfaceInjection;
 /**
- * Copyright (c) 2018/7/17. XiaoMi Inc.
+ * Copyright (c) 2018/7/23. XiaoMi Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,10 +13,10 @@ package Test;
  *
  * @Author: Han Guangyi
  * @Mail: hanguangyi@xiaomi.com
- * @Date: 2018/7/17 下午4:41
+ * @Date: 2018/7/23 下午6:05
  */
 
-import lombok.Data;
+import org.springframework.stereotype.Component;
 
 /**
  *@Brief: 简要说明.
@@ -25,18 +25,12 @@ import lombok.Data;
  *
  *@Note:
  */
-@Data
-public class Person {
-    public void run() {
-        System.out.println("run...");
-    }
+@Component
+public class Wedding implements MerryApi{
 
-    public void eat(){
-        System.out.println("eat...");
+    @Override
+    public String merrySb(String name) {
+        System.out.println("Merry me!");
+        return name;
     }
-
-    public String a(){
-        return "1";
-    }
-
 }

@@ -1,4 +1,4 @@
-package Thread;
+package com.hgy.javacode.Thread;
 /**
  * Copyright (c) 2018/7/27. XiaoMi Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +16,6 @@ package Thread;
  * @Date: 2018/7/27 下午2:31
  */
 
-import ScheduleTimer.TimerDoSth;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 

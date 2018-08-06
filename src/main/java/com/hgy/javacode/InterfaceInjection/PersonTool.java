@@ -1,6 +1,6 @@
-package Thread;
+package com.hgy.javacode.InterfaceInjection;
 /**
- * Copyright (c) 2018/7/27. XiaoMi Inc.
+ * Copyright (c) 2018/7/23. XiaoMi Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,11 +13,8 @@ package Thread;
  *
  * @Author: Han Guangyi
  * @Mail: hanguangyi@xiaomi.com
- * @Date: 2018/7/27 下午2:38
+ * @Date: 2018/7/23 下午3:41
  */
-
-import ScheduleTimer.TimerDoSth;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  *@Brief: 简要说明.
@@ -26,15 +23,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  *
  *@Note:
  */
-public class TestThread {
-    public static void main(String[] args){
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ThreadConfig.class);
-        AsynTaskService service = context.getBean(AsynTaskService.class);
-        for(int i= 0; i<10;i++){//执行异步任务
-
-            service.f2();
-            service.f1();
-        }
-        context.close();
-    }
+public interface PersonTool {
+    int getNewAge();
+    String getNewName(String name);
 }

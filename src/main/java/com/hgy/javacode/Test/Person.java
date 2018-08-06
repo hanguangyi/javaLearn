@@ -1,5 +1,6 @@
+package com.hgy.javacode.Test;
 /**
- * Copyright (c) 2018/7/30. XiaoMi Inc.
+ * Copyright (c) 2018/7/17. XiaoMi Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,14 +13,10 @@
  *
  * @Author: Han Guangyi
  * @Mail: hanguangyi@xiaomi.com
- * @Date: 2018/7/30 上午11:09
+ * @Date: 2018/7/17 下午4:41
  */
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.scheduling.annotation.EnableScheduling;
-
-import javax.swing.*;
+import lombok.Data;
 
 /**
  *@Brief: 简要说明.
@@ -28,13 +25,18 @@ import javax.swing.*;
  *
  *@Note:
  */
-
-@EnableScheduling
-@ComponentScan(basePackages = "ScheduleTimer")
-@SpringBootApplication
-public class SpringApplication {
-    public static void main(String[] args)
-    {
-        org.springframework.boot.SpringApplication.run(SpringApplication.class, args);
+@Data
+public class Person {
+    public void run() {
+        System.out.println("run...");
     }
+
+    public void eat(){
+        System.out.println("eat...");
+    }
+
+    public String a(){
+        return "1";
+    }
+
 }

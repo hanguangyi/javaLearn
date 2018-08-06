@@ -1,4 +1,4 @@
-package Test;
+package com.hgy.javacode.Test;
 /**
  * Copyright (c) 2018/7/17. XiaoMi Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,11 +13,11 @@ package Test;
  *
  * @Author: Han Guangyi
  * @Mail: hanguangyi@xiaomi.com
- * @Date: 2018/7/17 下午4:47
+ * @Date: 2018/7/17 下午4:44
  */
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -27,27 +27,32 @@ import org.junit.Test;
  *
  *@Note:
  */
-public class Person2Test {
-    private static Person p;//成员域
+public class PersonTest {
+    private Person p;//成员域
 
-    @BeforeClass
-    public static void beforeClass(){//需要是static
-        System.out.println("beforeclass");
-        p = new Person();//测试方法之前自动执行(整个过程只执行一次因為是static)，可以放初始化代码片段
+    //以前在main里面测试，测试一个要注释一个 麻烦，
+    //现在你想测试那个就在那个的方法上右击测试就ok
+
+    @Before
+    public void before(){
+        System.out.println("before");
+        p = new Person();//测试方法之前自动执行(每執行一個方法都要執行一次，因為不是static)，可以放初始化代码片段
     }
+
     @Test
     public void testRun() {
-//		Person p = new Person();//这代码可以注释掉了因为前面定义了一个全局的p对象，在测试方法时会自动执行
         p.run();
     }
+
     @Test
-    public void testEat(){
-//		Person p = new Person();//同上
+    public void testEat() {
         p.eat();
     }
-    @AfterClass
-    public static void afterClass(){
-        System.out.println("afterclass");
-        p = null;//使其不再指向對象
+
+    @After
+    public void after(){
+        System.out.println("after");
+        p = null;
     }
+
 }

@@ -1,4 +1,4 @@
-package InterfaceInjection;
+package com.hgy.javacode.InterfaceInjection;
 /**
  * Copyright (c) 2018/7/23. XiaoMi Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,15 +16,9 @@ package InterfaceInjection;
  * @Date: 2018/7/23 下午3:44
  */
 
-import javafx.application.Application;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.jca.context.SpringContextResourceAdapter;
-import org.springframework.stereotype.Component;
 
 /**
  *@Brief: 简要说明.

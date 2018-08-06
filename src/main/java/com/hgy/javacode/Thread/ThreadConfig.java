@@ -1,4 +1,4 @@
-package Thread;
+package com.hgy.javacode.Thread;
 /**
  * Copyright (c) 2018/7/27. XiaoMi Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,13 +17,11 @@ package Thread;
  */
 
 import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.AsyncConfigurer;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
-import org.springframework.stereotype.Component;
 
 import java.util.concurrent.Executor;
 
@@ -35,7 +33,7 @@ import java.util.concurrent.Executor;
  *@Note:
  */
 @Configuration
-@ComponentScan("Thread")
+@ComponentScan("com.hgy.javacode.Thread")
 @EnableAsync//启动异步任务
 public class ThreadConfig implements AsyncConfigurer {
 

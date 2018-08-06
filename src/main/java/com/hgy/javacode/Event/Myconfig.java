@@ -1,6 +1,6 @@
-package InterfaceInjection;
+package com.hgy.javacode.Event;
 /**
- * Copyright (c) 2018/7/23. XiaoMi Inc.
+ * Copyright (c) 2018/8/6. XiaoMi Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,8 +13,11 @@ package InterfaceInjection;
  *
  * @Author: Han Guangyi
  * @Mail: hanguangyi@xiaomi.com
- * @Date: 2018/7/23 下午6:04
+ * @Date: 2018/8/6 下午3:18
  */
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 /**
  *@Brief: 简要说明.
@@ -23,6 +26,7 @@ package InterfaceInjection;
  *
  *@Note:
  */
-public interface MerryApi {
-    String merrySb(String name);
+@Configuration
+@ComponentScan("com.hgy.javacode.Event")
+public class Myconfig {
 }

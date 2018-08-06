@@ -1,6 +1,6 @@
-package ScheduleTimer;
+package com.hgy.javacode.Event;
 /**
- * Copyright (c) 2018/7/27. XiaoMi Inc.
+ * Copyright (c) 2018/8/5. XiaoMi Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,30 +13,24 @@ package ScheduleTimer;
  *
  * @Author: Han Guangyi
  * @Mail: hanguangyi@xiaomi.com
- * @Date: 2018/7/27 下午4:40
+ * @Date: 2018/8/5 下午4:51
  */
 
-import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Controller;
+import org.springframework.context.event.EventListener;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 /**
- *@Brief: 简要说明.
+ *@Brief: 有两种方式，一个是implement ApplicationListener，另一种是使用注解@EventListener
  *
  *@Detail: 详细注释.
  *
  *@Note:
  */
-
 @Service
-public class TimerDoSth {
-    /**
-     * 定时任务，每隔10s打印一句话
-     */
-    @Scheduled(cron = "0/1 * * * * ?")
-    public void printSth(){
-        System.out.println("here print ******hgy");
+public class EventHandler {
+    @EventListener
+    public void onApplicationEvent(EventCustomType eventCustomType) {
+        System.out.println("receive event "+eventCustomType);
     }
-
 }
